@@ -3,6 +3,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
+require("dotenv").config();
 require("./database/config");
 
 const indexRouter = require("./routes/index");
@@ -21,6 +22,6 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/classes", classRouter);
 
-const listener = app.listen(process.env.PORT, function () {
+const listener = app.listen(process.env.PORT||5500, function () {
   console.log("Listening on port " + listener.address().port);
 });
