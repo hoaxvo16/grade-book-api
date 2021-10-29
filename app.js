@@ -21,6 +21,6 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/classes", classRouter);
 
-const listener = app.listen(8080, function () {
+const listener = app.listen(process.env.PORT, function () {
   console.log("Listening on port " + listener.address().port);
 });
